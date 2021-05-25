@@ -22,6 +22,14 @@
         background-color: darkslategrey;
         color: floralwhite;
       }
+      .red{
+        display: none;
+        color:red;
+        font-size:25px;
+      }
+      .hidden{
+       visibility: hidden;
+      }
     </style>
   </head>
 
@@ -30,12 +38,13 @@
     <button onclick="changeH1Text()">Change H1 Text</button>
     <button onclick="changeBgColor()">Change BG Color</button>
     <button onclick="changePText()">Change the Footer</button>
+    <button onclick="removeImg()">Remove Image</button>
     <h1>Brazilian Market in Europe</h1>
     
 
     <div>
       <h2 id="demo-id">Havaianas Flip Flop</h2>
-      <img width="50%" height="50%" src="https://bit.ly/3vmhJFh"/>
+      <img width="50%" height="50%" id="image1" src="https://bit.ly/3vmhJFh"/>
       <div>The best and comfortable flip flop ever! Havaianas is wore around the world and the most popular. </div>
       <div class="bold">€ 21,59  <a href="https://www.amazon.fr/Havaianas-Brasil-Tongs-Adulte-Brazilian/dp/B001OI3MQ6/ref=sr_1_4_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=havaianas&qid=1621949379&sr=8-4-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFGU08wQUJJSDZCV1EmZW5jcnlwdGVkSWQ9QTAyOTkyMDlWWU1DWVFYUlUyVUwmZW5jcnlwdGVkQWRJZD1BMDI2NTE1OTFMSlExR1E3ODhHM08md2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl"> Buy Here</a></div>
     </div>
@@ -76,6 +85,11 @@
 
       <script lang="text/javascript">
 
+       const removeImg = function(){
+        for (let images of document.querySelectorAll("img")){
+        images.classList.toggle("hidden");
+        }
+       }
         const changeH1Text = function(){
           let h1 = document.getElementsByTagName('h1')[0];
           h1.innerText = "You are smart!";
@@ -87,35 +101,7 @@
           let p = document.getElementsByTagName('p')[0];
           p.innerText = "You are smart!";
         }
-        const addANewDiv = function(){
-  
-            // Create a new DIV in my page
-            let newDiv = document.createElement("div")
-            // <div></div>
-            newDiv.innerText = "Hi, I'm the new guy here"
-            // <div>Hi, I'm the new guy here</div>
-            newDiv.style.color = "green"
-            // <div style="color:green;">Hi, I'm the new guy here</div>
-            newDiv.id = "new-div"
-            // <div style="color:green;" id="new-div">Hi, I'm the new guy here</div>
-  
-            // BEWARE: right now, this new DIV only exists in memory,
-            // and it doesn't belong to the page itself
-  
-            // We select its container node
-            let parentNode = document.querySelector("div")
-            // ..and we then append the new node as a child of it
-            parentNode.appendChild(newDiv)
-        }
-  
-        const removeAnElement = function(){
-          let elementToRemove = document.querySelector("div h2")
-          if (elementToRemove !== null) {
-            elementToRemove.remove()          
-          } else {
-            alert("no more elements to remove!")
-          }
-        }
+        
   
       </script>
   </body>
