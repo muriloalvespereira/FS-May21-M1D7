@@ -27,7 +27,9 @@
 
 
   <body>
+    <button onclick="changeH1Text()">Change H1 Text</button>
     <h1>Brazilian Market in Europe</h1>
+    
 
     <div>
       <h2 id="demo-id">Havaianas Flip Flop</h2>
@@ -69,5 +71,43 @@
       <footer>
         <p class="pbg">Copyright 2021 - Brazilian Market in Europe - London - Chelsea <a href="mailto:brazilianmarket@gmail.com">brazilianmarket@gmail.com</a></p>
       </footer>
+
+      <script lang="text/javascript">
+
+        const changeH1Text = function(){
+          let h1 = document.getElementsByTagName('h1')[0];
+          h1.innerHTML = "You are smart!";
+        }
+        const addANewDiv = function(){
+  
+            // Create a new DIV in my page
+            let newDiv = document.createElement("div")
+            // <div></div>
+            newDiv.innerText = "Hi, I'm the new guy here"
+            // <div>Hi, I'm the new guy here</div>
+            newDiv.style.color = "green"
+            // <div style="color:green;">Hi, I'm the new guy here</div>
+            newDiv.id = "new-div"
+            // <div style="color:green;" id="new-div">Hi, I'm the new guy here</div>
+  
+            // BEWARE: right now, this new DIV only exists in memory,
+            // and it doesn't belong to the page itself
+  
+            // We select its container node
+            let parentNode = document.querySelector("div")
+            // ..and we then append the new node as a child of it
+            parentNode.appendChild(newDiv)
+        }
+  
+        const removeAnElement = function(){
+          let elementToRemove = document.querySelector("div h2")
+          if (elementToRemove !== null) {
+            elementToRemove.remove()          
+          } else {
+            alert("no more elements to remove!")
+          }
+        }
+  
+      </script>
   </body>
 </html>
