@@ -29,6 +29,7 @@
   <body background-color="black">
     <button onclick="changeH1Text()">Change H1 Text</button>
     <button onclick="changeBgColor()">Change BG Color</button>
+    <button onclick="changePText()">Change the Footer</button>
     <h1>Brazilian Market in Europe</h1>
     
 
@@ -77,10 +78,14 @@
 
         const changeH1Text = function(){
           let h1 = document.getElementsByTagName('h1')[0];
-          h1.innerHTML = "You are smart!";
+          h1.innerText = "You are smart!";
         }
         const changeBgColor = function() {
         document.body.style.background = "green"
+        }
+        const changePText = function(){
+          let p = document.getElementsByTagName('p')[0];
+          p.innerText = "You are smart!";
         }
         const addANewDiv = function(){
   
