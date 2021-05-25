@@ -23,7 +23,6 @@
         color: floralwhite;
       }
       .red{
-        display: none;
         color:red;
         font-size:25px;
       }
@@ -39,6 +38,7 @@
     <button onclick="changeBgColor()">Change BG Color</button>
     <button onclick="changePText()">Change the Footer</button>
     <button onclick="removeImg()">Remove Image</button>
+    <button onclick="changePriceColor()">Price Color</button>
     <h1>Brazilian Market in Europe</h1>
     
 
@@ -101,8 +101,20 @@
           let p = document.getElementsByTagName('p')[0];
           p.innerText = "You are smart!";
         }
-        
-  
+        const changePriceColor = function(){
+        const color = getRandomColor();
+          for ( let price of document.getElementsByClassName('bold')){
+            price.style.color = color;
+        }
+        }
+
+      function getRandomColor() {
+      const red = Math.round(Math.random() * 255);
+      const green = Math.round(Math.random() * 255);
+      const blue = Math.round(Math.random() * 255);
+
+      return "rgb(" + red + ", " + green + ", " + blue + ")";
+    }
       </script>
   </body>
 </html>
